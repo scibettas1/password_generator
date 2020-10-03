@@ -1,35 +1,54 @@
 
-var specialCharacters = ["!", "@", "#"]
+var specialCharacters = ["!", "@", "#", "$", "#", "%", "^", "&", "*", "<", ">", "?", "~", "-", "_"];
+var numericValues = ["123456789".split()];
+var lowerCase = ["abcdefghijklmnopqrstuvwxyz".split()];
+var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split()];
 
-var numericValues = ["123456789".split()]
+// write a function to promp user for password options
+//function options() {
 
-var lowerCase = ["abcdefghijklmnopqrstuvwxyz".split()]
-
-function getPasswordOptions() {
+  //wire a variable to store length of password form the user input
   var length = parseInt (
     prompt("How many characters would you like your password to contain?")
   );
-}
+  // conditional to check if password lenfth matches params
 
-//idiot proof it
+  // conditional to hceck if its atleast 8 - 128 chars 
 
-if (isNaN(length) === true) {
-  alert("Password length must be a number.");
-  return;
-}
+  //viariable to store each prompt (chars int special chars)
+  var hasUpperCase = confirm("Should it Contain Uppercase letters?");
+  var hasLowerCase = confirm("Should it Contain Lowercase letters?");
+  var hasSpecial = confirm("Should it Contain Special Characters?");
+  var hasNumbers = confirm("Should it Contain numbers?");
 
-if (length < 8) {
-  alert("Password must be at least 8 characters.");
-  return;
-}
+  // conditional to check if user does not include any of your 4 choice if (chars){alert must have atleast one chice
+  // create and object to store user input
+  /* var passwordOptions={
+    length: length,
+    hasUpperCase: hasUpperCase,
+    hasLowerCase: hasLowerCase,
+    hasSpecial: hasSpecial,
+    hasNumbers: hasNumbers,
+  };
+  return passwordOption */
+//}
 
-if (length > 128) {
-  alert("Password must be less than 128 characters.");
-  return;
-}
+
+//Generatepassword function
+  //variable to store password as its being concated
+  var result = []
+  //array to store types of characters that are inclueded in the password
+  var possibleCharacters = []
+  //array to contain one of each type of chosen character to us
+  var guaranteedCharacters = []
+
+  //4 conditional statments that adds array of characters based on user input than you need to concatinate and push to arrays
+  // foor loop to iterate over password lenght select random from possible array characters and put them to the result variable
+/* for (var i = 0; i<(length); i++){
+  var password = specialCharacters.charAt(Math.floor(Math.random()* specialCharacters.length));
+} */
 
  
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -44,3 +63,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
