@@ -28,38 +28,56 @@ function options() {
 
   // conditional to check if user does not include any of your 4 choice if (chars){alert must have atleast one chice
   while (!hasUpperCase && !hasLowerCase && !hasSpecial && !hasNumbers) {
-    alert("Hmm... That doesn't seem very secure. Let's try again. Please make a least one selection.")
+    alert("Hmm... That doesn't seem very secure. Let's try again. Please make at least one selection.")
     var hasUpperCase = confirm("Should it Contain Uppercase letters?");
     var hasLowerCase = confirm("Should it Contain Lowercase letters?");
     var hasSpecial = confirm("Should it Contain Special Characters?");
     var hasNumbers = confirm("Should it Contain numbers?");
   }
-  
+
   // create and object to store user input
-  /* var passwordOptions={
+ /* var passwordOptions={
     length: length,
     hasUpperCase: hasUpperCase,
     hasLowerCase: hasLowerCase,
     hasSpecial: hasSpecial,
     hasNumbers: hasNumbers,
   };
-  return passwordOption */
+  return passwordOption; */
 }
 
 //Generatepassword function
+function generate() {
+  
   //variable to store password as its being concated
   var result = []
+  
   //array to store types of characters that are inclueded in the password
   var possibleCharacters = []
+  
   //array to contain one of each type of chosen character to us
   var guaranteedCharacters = []
 
   //4 conditional statments that adds array of characters based on user input than you need to concatinate and push to arrays
+  if (hasUpperCase = true) {
+    upperCase.charAt(Math.floor(Math.random()* upperCase.length));
+  }
+  if (hasLowerCase = true) {
+    
+  }
+  if (hasSpecial = true) {
+    
+  }
+  if (hasNumbers = true) {
+    
+  }
   // foor loop to iterate over password lenght select random from possible array characters and put them to the result variable
-/* for (var i = 0; i<(length); i++){
-  var password = specialCharacters.charAt(Math.floor(Math.random()* specialCharacters.length));
-} */
-
+  var password = ''
+  for (var i = 0; i<(length); i++){
+    password += specialCharacters.charAt(Math.floor(Math.random()* specialCharacters.length));
+  }
+  return password;
+}
  
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
