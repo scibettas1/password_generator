@@ -36,14 +36,14 @@ function options() {
   }
 
   // create and object to store user input
- /* var passwordOptions={
+var passwordOptions={
     length: length,
     hasUpperCase: hasUpperCase,
     hasLowerCase: hasLowerCase,
     hasSpecial: hasSpecial,
     hasNumbers: hasNumbers,
   };
-  return passwordOption; */
+  return passwordOption;
 }
 
 //Generatepassword function
