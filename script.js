@@ -82,7 +82,7 @@ function generate() {
   // foor loop to iterate over password lenght select random from possible array characters and put them to the result variable
   for (var i = 0; i<(length); i++){
     var password = ''
-    password += randomUpper.concat(randomLower,randomSpecial,randomNumber);
+    password += (randomUpper, randomLower,randomSpecial,randomNumber);
     document.getElementById('password');
   }
 
