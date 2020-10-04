@@ -60,37 +60,32 @@ function generate() {
 
   //4 conditional statments that adds array of characters based on user input than you need to concatinate and push to arrays
   if (hasUpperCase = true) {
-    upperCase.charAt(Math.floor(Math.random()* upperCase.length));
+    var randomUpper = upperCase.charAt(Math.floor(Math.random()* upperCase.length));
+  } else {
+    var randomUpper = ' ';
   }
   if (hasLowerCase = true) {
-    
+    var randomLower = lowerCase.charAt(Math.floor(Math.random()* lowerCase.length));
+  } else {
+    var randomLower = ' ';
   }
   if (hasSpecial = true) {
-    
+    var randomSpecial = specialCharacters.charAt(Math.floor(Math.random()* specialCharacters.length));
+  } else {
+    var randomSpecial = ' ';
   }
   if (hasNumbers = true) {
-    
+    var randomNumber = numericValues.charAt(Math.floor(Math.random()* numericValues.length));
+  } else {
+    var randomNumber = ' ';
   }
   // foor loop to iterate over password lenght select random from possible array characters and put them to the result variable
-  var password = ''
   for (var i = 0; i<(length); i++){
-    password += specialCharacters.charAt(Math.floor(Math.random()* specialCharacters.length));
+    var password = ''
+    password += randomUpper.concat(randomLower,randomSpecial,randomNumber);
+    document.getElementById('password');
   }
-  return password;
+
 }
  
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
