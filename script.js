@@ -8,20 +8,20 @@ var hasUpperCase;
 var hasLowerCase;
 var hasSpecial;
 var hasNumbers;
-var length;
+var pwLength;
 
 // write a function to promp user for password options
 function options() {
 
-  //wire a variable to store length of password form the user input
-  length = parseInt(
+  //wire a variable to store pwLength of password form the user input
+  pwLength = parseInt(
     prompt("How many characters would you like your password to contain?")
   );
 
   // conditional to hceck if its atleast 8 - 128 chars 
-  while (length < 8 || length > 128) {
+  while (pwLength < 8 || pwLength > 128) {
     alert("Password must be bewteen 8 and 128 characters. Please choose again.")
-    length = parseInt(
+    pwLength = parseInt(
       prompt("How many characters would you like your password to contain?")
     );
   }
@@ -53,7 +53,7 @@ function generate() {
 
   var password = ' '
   
-  for (var i = 0; i < (length); i++) {
+  for (var i = 0; i < (pwLength/4); i++) {
     if (hasUpperCase == true) {
       randomUpper = upperCase[Math.floor(Math.random() * upperCase.length)];
     } else {
@@ -81,7 +81,7 @@ function generate() {
     password += randomUpper.concat(randomLower, randomSpecial, randomNumber,);
   }
   console.log(password)
-  console.log(length)
+  console.log(pwLength)
   document.getElementById('password').value = password;
 }
 
