@@ -75,13 +75,10 @@ function generate() {
     } else {
       randomNumber = ' ';
     }
-    // for loop to iterate over password length and select random from possible array characters and put them to the password variable
-
 
     password += randomUpper.concat(randomLower, randomSpecial, randomNumber,);
   }
-  console.log(password)
-  console.log(pwLength)
+
   document.getElementById('password').value = password;
 }
 
