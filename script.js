@@ -1,8 +1,8 @@
 
 var specialCharacters = ["!", "@", "#", "$", "#", "%", "^", "&", "*", "<", ">", "?", "~", "-", "_"];
-var numericValues = ["123456789".split()];
-var lowerCase = ["abcdefghijklmnopqrstuvwxyz".split()];
-var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split()];
+var numericValues = ["1","2","3","4","5","6","7","8","9"];
+var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 var hasUpperCase; 
 var hasLowerCase; 
@@ -40,61 +40,49 @@ function options() {
     hasSpecial = confirm("Should it Contain Special Characters?");
     hasNumbers = confirm("Should it Contain numbers?");
   }
-  //return passwordOptions;
   generate()
 }
 
 //Generatepassword function
 function generate() {
 
-  //variable to store password as its being concated
-  var result = []
-
-  //array to store types of characters that are inclueded in the password
-  var possibleCharacters = []
-
-  //array to contain one of each type of chosen character to us
-  var guaranteedCharacters = []
+  var randomUpper = [];
+  var randomLower = [];
+  var randomSpecial = [];
+  var randomNumber = [];
 
   //4 conditional statments that adds array of characters based on user input than you need to concatinate and push to arrays
   if (hasUpperCase == true) {
     console.log("hasUppercase=true");
-    possibleCharacters.concat(upperCase)
-    guaranteedCharacters.concat(randomUpper)
-    var randomUpper = upperCase[(Math.floor(Math.random() * upperCase.length))];
+    randomUpper = upperCase[Math.floor(Math.random() * upperCase.length)];
   } else {
-    var randomUpper = ' ';
+    randomUpper = ' ';
   }
   if (hasLowerCase == true) {
     console.log("lowerCase=true")
-    possibleCharacters.concat(lowerCase)
-    guaranteedCharacters.concat(randomLower)
-    var randomLower = lowerCase[(Math.floor(Math.random() * lowerCase.length))];
+    randomLower = lowerCase[Math.floor(Math.random() * lowerCase.length)];
   } else {
-    var randomLower = ' ';
+    randomLower = ' ';
   }
   if (hasSpecial == true) {
     console.log("specialCharacters=true")
-    possibleCharacters.concat(specialCharacters)
-    guaranteedCharacters.concat(randomSpecial)
-    var randomSpecial = specialCharacters[(Math.floor(Math.random() * specialCharacters.length))];
+    randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
   } else {
-    var randomSpecial = ' ';
+    randomSpecial = ' ';
   }
   if (hasNumbers == true) {
     console.log("numericValues=true")
-    possibleCharacters.concat(numericValues)
-    guaranteedCharacters.concat(randomNumber)
-    var randomNumber = numericValues[(Math.floor(Math.random() * numericValues.length))];
+    randomNumber = numericValues[Math.floor(Math.random() * numericValues.length)];
   } else {
-    var randomNumber = ' ';
+    randomNumber = ' ';
   }
-  // for loop to iterate over password lenghth and select random from possible array characters and put them to the result variable
+  // for loop to iterate over password length and select random from possible array characters and put them to the password variable
   var password = ' '
   for (var i = 0; i < (length); i++) {
-    password += (randomUpper, randomLower, randomSpecial, randomNumber);
+    password += randomUpper.concat(randomLower, randomSpecial, randomNumber,);
   }
   console.log (password)
+  console.log (length)
   document.getElementById('password').value = password;
 }
 
