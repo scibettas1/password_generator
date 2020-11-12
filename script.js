@@ -50,7 +50,7 @@ var masterArray = []
   
 var password = ' '
 
-
+    // if == true add to array
   if (hasUpperCase == true) {
     masterArray = upperCase.concat(masterArray)
   } 
@@ -66,9 +66,8 @@ var password = ' '
 
 
   for (var i = 0; i < pwLength; i++) {
-    password += masterArray[Math.floor(Math.random() * masterArray.length)];
     //choose a random item from an array
-    // if == true add to array
+    password += masterArray[Math.floor(Math.random() * masterArray.length)];
   }
 
   document.getElementById('password').value = password;
