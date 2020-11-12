@@ -34,8 +34,8 @@ N/A
 
 ## Screen Shot
 
-(/images/screen_shot.png)
-Format: ![screen shot of executed project](url)
+![GitHub Logo](/images/screen_shot.png)
+
 
 ## License
 
