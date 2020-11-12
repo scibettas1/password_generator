@@ -46,37 +46,29 @@ function options() {
 //Generatepassword function
 function generate() {
 
-  var randomUpper;
-  var randomLower;
-  var randomSpecial;
-  var randomNumber;
-
-  var password = ' '
+var masterArray = []
   
-  for (var i = 0; i < (pwLength/4); i++) {
-    if (hasUpperCase == true) {
-      randomUpper = upperCase[Math.floor(Math.random() * upperCase.length)];
-    } else {
-      randomUpper = ' ';
-    }
-    if (hasLowerCase == true) {
+var password = ' '
 
-      randomLower = lowerCase[Math.floor(Math.random() * lowerCase.length)];
-    } else {
-      randomLower = ' ';
-    }
-    if (hasSpecial == true) {
-      randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-    } else {
-      randomSpecial = ' ';
-    }
-    if (hasNumbers == true) {
-      randomNumber = numericValues[Math.floor(Math.random() * numericValues.length)];
-    } else {
-      randomNumber = ' ';
-    }
 
-    password += randomUpper.concat(randomLower, randomSpecial, randomNumber,);
+  if (hasUpperCase == true) {
+    masterArray = upperCase.concat(masterArray)
+  } 
+  if (hasLowerCase == true) {
+    masterArray = lowerCase.concat(masterArray)
+  } 
+  if (hasSpecial == true) {
+    masterArray = specialCharacters.concat(masterArray)
+  }
+  if (hasNumbers == true) {
+    masterArray = numericValues.concat(masterArray)
+  }
+
+
+  for (var i = 0; i < pwLength; i++) {
+    password += masterArray[Math.floor(Math.random() * masterArray.length)];
+    //choose a random item from an array
+    // if == true add to array
   }
 
   document.getElementById('password').value = password;
